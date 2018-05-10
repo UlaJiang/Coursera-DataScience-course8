@@ -1,0 +1,290 @@
+source(“http://www.headfirstlabs.com/books/hfda/hfda.R”)
+source("http://www.headfirstlabs.com/books/hfda/hfda.R")
+employee
+employees
+hist(employees$received, breaks=50)
+sd(employees$received)
+summary(employees$received)
+help(sd)
+help(summary)
+hist(employees$received[employees$year == 2007], breaks = 50)
+hist(employees$received[employees$year == 2008], breaks = 50)
+hist(employees$received[employees$gender == “F”], breaks = 50)
+hist(employees$received[employees$gender == "F"], breaks = 50)
+hist(employees$received[employees$gender == "M"], breaks = 50)
+hist(employees$received[employees$negotiated == FALSE], breaks = 50)
+hist(employees$received[employees$negotiated == TRUE], breaks = 50)
+hist(employees$received[employees$gender == "F"], breaks = 50)
+hist(employees$received[employees$negotiated == FALSE], breaks = 50)
+hist(employees$received[employees$gender == "F"], breaks = 50)
+summary(employees$received[employees$negotiated == FALSE], breaks = 50)
+summary(employees$received[employees$negotiated == TRUE], breaks = 50)
+employees <- read.csv("http://www.headfirstlabs.com/books/hfda/ hfda_ch10_employees.csv", header=TRUE)head(employees,n=30)plot(employees$requested[employees$negotiated==TRUE], employees$received[employees$negotiated==TRUE])
+employees <- read.csv("http://www.headfirstlabs.com/books/hfda/ hfda_ch10_employees.csv", header=TRUE)
+head(employees,n=30)
+plot(employees$requested[employees$negotiated==TRUE], employees$received[employees$negotiated==TRUE])
+data1 <- read.table("/Users/ula/数据分析/hfda_data",header=TRUE)
+data1 <- read.table('/Users/ula/数据分析/hfda_data',header=TRUE)
+data1 <- read.table('/Users/ula/数据分析/hfda_ch13_data_for_R.csv',header=TRUE)
+data1 <- read.table('hfda_ch13_data_for_R.csv',header=TRUE)
+data1 <- read.csv('hfda_ch13_data_for_R.csv',header=TRUE)
+hfhh <- read.csv("http://www.headfirstlabs.com/hfda_ch13_data_for_R.csv",header=TRUE)
+data1 <- file.choose()
+data1
+file.show(data1)
+data1 <- read.table('/Users/ula/数据分析/hfda_data/hfda_ch13_data_for_R.csv',header=TRUE)
+read.table
+read.table(file = "hfda_ch13_data_for_R.csv", header=TRUE)
+read.table(file = "hfda_ch13_data_for_R", header=TRUE)
+data <- read.csv("hfda_ch13_data_for_R.csv")
+source("http://www.headfirstlabs.com/books/hfda/hfda.R")
+employees
+source("http://www.headfirstlabs.com/books/hfda/hfda.R")
+~/数据分析/hfda_data/hfda_ch09_employees.csv
+source("/Users/ula/数据分析/hfda_data/hfda_ch09_employees.csv")
+source("http://www.headfirstlabs.com/books/hfda/hfda.R")
+employees
+hist(employees$received, breaks=50)
+sd(employees$received)
+summary(employees$received)
+hist(employees$received, breaks=50)]
+hist(employees$received, breaks=50)
+employees <- read.csv("http://www.headfirstlabs.com/books/hfda/ hfda_ch10_employees.csv", header=TRUE)
+employees <- read.csv("http://www.headfirstlabs.com/books/hfda/ hfda_ch10_employees.csv", header=TRUE, row.names=NULL)
+head(employees,n=30)
+plot(employees$requested[employees$negotiated==TRUE], employees$received[employees$negotiated==TRUE])
+employees <- read.csv("http://www.headfirstlabs.com/books/hfda/ hfda_ch10_employees.csv", header=TRUE)
+employees <- read.csv("http://www.headfirstlabs.com/books/hfda/ hfda_ch10_employees.csv", header=TRUE, sep=",",row.names=NULL)
+head(employees,n=30)
+plot(employees$requested[employees$negotiated==TRUE], employees$received[employees$negotiated==TRUE])
+getwd()
+cd '数据分析'
+dispatch <- read.csv("dispatched.csv", header=TRUE)
+plot(Sales~jitter(Article.count),data=dispatch)
+head(dispatched)
+head(dispatched.csv)
+articleHitsComments <- read.csv( "http://www.headfirstlabs.com/books/hfda/ hfda_ch12_articleHitsComments.csv",header=TRUE)
+dispatch <- read.csv("hfda_ch12_articleHitsComments.csv", header=TRUE)
+library(lattice)
+xyplot(webHits~commentCount|authorName,data=articleHitsComments)
+xyplot(webHits~commentCount|authorName,data=hfda_ch12_articleHitsComments)
+xyplot(webHits~commentCount|authorName,data= dispatch)
+install.package("KernSmooth")
+install.packages("KernSmooth")
+library(KernSmooth)
+library(datasets)#
+data(iris)
+？iris
+?iris
+iris
+sub = subset(iris, Species = 'virginica', select = Sepal.Length)
+apply(sub, 2, mean)
+apply(iris[, 1:4], 2, mean)
+sub = subset(iris, select = Sepal.Length)
+apply(sub, 2, mean)
+library(datasets)#
+data(mtcars)
+mtcars
+split(mtcars, mtcars$cyl)
+tapply(mtcars$mpg, mtcars$cyl, mean)
+mean(mtcars$mpg, mtcars$cyl)
+with(mtcars, tapply(mpg, cyl, mean))
+tapply(mtcars$cyl, mtcars$mpg, mean)
+lapply(mtcars, mean)
+sapply(split(mtcars$mpg, mtcars$cyl), mean)
+sapply(mtcars, cyl, mean)
+split(mtcars$mpg, mtcars$cyl)
+debug(ls)
+ls()
+ls
+exit
+ls
+quit
+q
+ls()
+source("best.R")
+setwd("/User/ula/数据分析/coursera/dataScience/course2/assignment3/")
+setwd("/数据分析/coursera/dataScience/course2/assignment3/")
+getwd()
+setwd("/数据分析/coursera/dataScience/course2/assignment3/")
+setwd("/User/ula/数据分析/coursera/dataScience/course2/assignment3/")
+setwd("User/ula/数据分析/coursera/dataScience/course2/assignment3/")
+history
+q()
+# set seed for reproducability#
+set.seed(31)#
+#
+# set lambda to 0.2#
+lambda <- 0.2#
+#
+# 40 samples#
+n <- 40#
+#
+# 1000 simulations#
+simulations <- 1000#
+#
+# simulate#
+simulated_exponentials <- replicate(simulations, rexp(n, lambda))#
+#
+# calculate mean of exponentials#
+means_exponentials <- apply(simulated_exponentials, 2, mean)
+simulated_exponentials
+means_exponentials
+analytical_mean <- mean(means_exponentials)#
+analytical_mean
+theory_mean <- 1/lambda#
+theory_mean
+hist(means_exponentials, xlab = "mean", main = "Exponential Function Simulations")#
+abline(v = analytical_mean, col = "red")#
+abline(v = theory_mean, col = "orange")
+# standard deviation of distribution#
+standard_deviation_dist <- sd(means_exponentials)#
+standard_deviation_dist#
+# standard deviation from analytical expression#
+standard_deviation_theory <- (1/lambda)/sqrt(n)#
+standard_deviation_theory#
+# variance of distribution#
+variance_dist <- standard_deviation_dist^2#
+variance_dist#
+# variance from analytical expression#
+variance_theory <- ((1/lambda)*(1/sqrt(n)))^2#
+variance_theory
+xfit <- seq(min(means_exponentials), max(means_exponentials), length=100)#
+yfit <- dnorm(xfit, mean=1/lambda, sd=(1/lambda/sqrt(n)))#
+hist(means_exponentials,breaks=n,prob=T,col="orange",xlab = "means",main="Density of means",ylab="density")#
+lines(xfit, yfit, pch=22, col="black", lty=5)
+# compare the distribution of averages of 40 exponentials to a normal distribution#
+qqnorm(means_exponentials)#
+qqline(means_exponentials, col = 2)
+load(ToothGrowth)
+data(ToothGrowth)
+head(ToothGrowth)
+str(ToothGrowth)
+ToothGrowth
+library(reshape2)
+dcast(ToothGrowth,supp + dose ~library(datasets); data(ChickWeight); library(reshape2))
+library(datasets); data(ChickWeight); library(reshape2)
+head(ChickWeight)
+head(ChickWeight,20)
+wideCW <- dcast(ChickWeight, Diet + Chick ~ Time, value.var = "weight")
+head(wideCW)
+wideCW <- dcast(ToothGrowth, supp + dose ~ Type, value.var = "len")
+wideCW <- dcast(ToothGrowth, supp + dose ~ len, value.var = "len")
+head(wideCW)
+wideCW <- dcast(ToothGrowth, supp + dose ~ len)
+head(wideCW)
+rep(1:4,10)
+rep(1:4,each=10)
+ToothGrowth$group <- factor(rep(1:4,each=10))
+ToothGrowth$group <- factor(rep(1:6,each=10))
+head(ToothGrowth)
+a <- dcast(ToothGrowth, supp + dose ~ group, value.var= dose)
+a <- dcast(ToothGrowth, supp + dose ~ group, value.var= len)
+a <- dcast(ToothGrowth, supp + dose ~ group, value.var= "len")
+head(a)
+ToothGrowth$group <- factor(rep(1:10,6))
+head(ToothGrowth,20)
+a <- dcast(ToothGrowth, supp + dose ~ group, value.var= "len")
+head(a)
+g <- ggplot(ChickWeight, aes(x = Time, y = weight, #
+                             colour = Diet, group = Chick))
+library(ggplot2)
+g <- ggplot(ChickWeight, aes(x = Time, y = weight, #
+                             colour = Diet, group = Chick))
+g
+g <- g + geom_line()
+g
+?ggplot
+g <- ggplot(ChickWeight, aes(x = Time, y = weight, #
+                             colour = Diet))
+g <- g + geom_line()
+g
+g <- ggplot(ChickWeight, aes(x = Time, y = weight, #
+                             colour = Diet, group = Chick))
+g <- g + geom_line()
+g
+factor <- c(rep(0,4), 0:9, 2, 2, 3, 3, 6, 6, 9, 9)
+factor
+library(UsingR); data(galton)
+library(manipulate)#
+myHist <- function(mu){#
+  hist(galton$child,col="blue",breaks=100)#
+  lines(c(mu, mu), c(0, 150),col="red",lwd=5)#
+  mse <- mean((galton$child - mu)^2)#
+  text(63, 150, paste("mu = ", mu))#
+  text(63, 140, paste("MSE = ", round(mse, 2)))#
+}#
+manipulate(myHist(mu), mu = slider(62, 74, step = 0.5))
+install.packages("manipulate")
+library(manipulate)#
+myHist <- function(mu){#
+  hist(galton$child,col="blue",breaks=100)#
+  lines(c(mu, mu), c(0, 150),col="red",lwd=5)#
+  mse <- mean((galton$child - mu)^2)#
+  text(63, 150, paste("mu = ", mu))#
+  text(63, 140, paste("MSE = ", round(mse, 2)))#
+}#
+manipulate(myHist(mu), mu = slider(62, 74, step = 0.5))
+install.packages("kernlab")
+library(kernlab)
+install.packages("Full R development environment metapackage")
+setwd('数据分析/coursera/dataScience/course8/project/')test <-read.csv("pml-testing.csv")#
+train <- read.csv("pml-training.csv",na.strings = c("NA", "#DIV/0!", ""))#
+validate <-read.csv("pml-testing.csv",na.strings = c("NA", "#DIV/0!", ""))#
+#
+# Data cleaning and processing#
+# remove all columns that contains NA,#
+# use "colSums(is.na()) == 0" to check whether there are NA in each column#
+features <- names(train[,colSums(is.na(train)) == 0])#
+#
+# dataset has no time-dependence, so remove the first 7 features#
+features <- features[-(1:7)]#
+train <- train[,colSums(is.na(train)) == 0][,-(1:7)]#
+validate <- validate[,colSums(is.na(validate)) == 0][,-(1:7)]#
+#
+# data partitioning#
+inTrain <- createDataPartition(y = train$classe, p = 0.6, list = FALSE)#
+training <- train[inTrain,]#
+testing <- train[-inTrain,]
+setwd('数据分析/coursera/dataScience/course8/project/')
+setwd('数据分析/coursera/dataScience/course8/project/')#
+train <- read.csv("pml-training.csv",na.strings = c("NA", "#DIV/0!", ""))#
+validate <-read.csv("pml-testing.csv",na.strings = c("NA", "#DIV/0!", ""))#
+#
+# Data cleaning and processing#
+# remove all columns that contains NA,#
+# use "colSums(is.na()) == 0" to check whether there are NA in each column#
+features <- names(train[,colSums(is.na(train)) == 0])#
+#
+# dataset has no time-dependence, so remove the first 7 features#
+features <- features[-(1:7)]#
+train <- train[,colSums(is.na(train)) == 0][,-(1:7)]#
+validate <- validate[,colSums(is.na(validate)) == 0][,-(1:7)]#
+#
+# data partitioning#
+inTrain <- createDataPartition(y = train$classe, p = 0.6, list = FALSE)#
+training <- train[inTrain,]#
+testing <- train[-inTrain,]
+library(caret)
+setwd('数据分析/coursera/dataScience/course8/project/')#
+train <- read.csv("pml-training.csv",na.strings = c("NA", "#DIV/0!", ""))#
+validate <-read.csv("pml-testing.csv",na.strings = c("NA", "#DIV/0!", ""))#
+#
+# Data cleaning and processing#
+# remove all columns that contains NA,#
+# use "colSums(is.na()) == 0" to check whether there are NA in each column#
+features <- names(train[,colSums(is.na(train)) == 0])#
+#
+# dataset has no time-dependence, so remove the first 7 features#
+features <- features[-(1:7)]#
+train <- train[,colSums(is.na(train)) == 0][,-(1:7)]#
+validate <- validate[,colSums(is.na(validate)) == 0][,-(1:7)]#
+#
+# data partitioning#
+inTrain <- createDataPartition(y = train$classe, p = 0.6, list = FALSE)#
+training <- train[inTrain,]#
+testing <- train[-inTrain,]
+modFit_rf <- train(classe ~ ., method = "rf", data = training, trControl=trainControl(method="cv",number = 10))#
+prediction_rf <- predict(modFit_rf, testing)#
+confusionMatrix(prediction_rf, testing$classe)
+modFit_rf <- train(classe ~ ., method = "rf", data = training, prox = TRUE, trControl=trainControl(method="cv",number = 10))

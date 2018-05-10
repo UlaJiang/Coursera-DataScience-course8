@@ -1,0 +1,107 @@
+---
+title: "Prediction Assignment Writeup"
+output: html_document
+---
+# Executive Summary
+In this project, our goal is to use data from accelerometers on the belt, forearm, arm, and dumbell of 6 participants to evaluate how well a person do a particular activity. Firstly, I will extract useful features from the training and testing dataset. Then I will use training dataset to train our models and envaluate the performance of each model accordingly. Finally, I will choose the best model to make predictions in our testing dataset.
+
+# Download and read both training and testing datasets 
+```{r}
+fileUrl1 <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-training.csv"
+fileUrl2 <- "https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv"
+# download datasets
+download.file(fileUrl2, destfile = "pml-testing.csv", method = "curl")
+dataDownloaded <- date()
+# read datasets
+train <- read.csv("pml-training.csv",na.strings = c("NA", "#DIV/0!", ""))
+validate <-read.csv("pml-testing.csv",na.strings = c("NA", "#DIV/0!", ""))
+```
+
+# Data cleaning and processing
+### 1. Check the dimensions of train and validate datasets
+```{r}
+dim(train)
+```
+
+```{r}
+dim(validate)
+```
+### 2. Remove all columns that contains NA
+Here we use "colSums(is.na()) == 0" to check whether there are NA in each column.
+```{r}
+train <- train[,colSums(is.na(train)) == 0]
+validate <- validate[,colSums(is.na(validate)) == 0]
+```
+
+Then we check the dimensions of train and validates datasets again.
+```{r}
+dim(train)
+```
+
+```{r}
+dim(validate)
+```
+
+### 3. Check the feature names and remove unrelated features
+```{r}
+names(train)
+```
+Since our datasets has no time-dependence, so we decided to remove the first 7 features.
+```{r}
+train <- train[,-(1:7)]
+validate <- validate[,-(1:7)]
+```
+
+# Data Partitioning
+Here i decided to seperate train dataset into two parts, 60% of them will be used to train our models, while 40% of them will be used to evaluate our modles.
+```{r}
+library(caret)
+inTrain <- createDataPartition(y = train$classe, p = 0.6, list = FALSE)
+training <- train[inTrain,]
+testing <- train[-inTrain,]
+```
+
+# Use three machine learning strategies to train models
+### 1. Classification Trees
+```{r}
+library(rpart)
+set.seed(123)
+#modFit_rpart <- train(classe ~ ., method = "rpart", data = training, 
+#                      trControl=trainControl(method="cv",number = 10), 
+#                      tuneGrid=data.frame(cp=0.01))
+modFit_rpart <- rpart(classe ~ ., data = training, method = "class")
+prediction_rpart <- predict(modFit_rpart, testing, type = "class")
+confusionMatrix(prediction_rpart, testing$classe)
+```
+We can see that the accuracy of this Classification Tree is 0.74.  
+
+### 2. Randon Forest
+```{r}
+library(randomForest)
+set.seed(123)
+#modFit_rf <- train(classe ~ ., method = "rf", data = training, prox = TRUE,
+#                   trControl=trainControl(method="cv",number = 10))
+modFit_rf <- randomForest(classe ~ ., data = training, method = "rf", 
+          importance = T, trControl = trainControl(method = "cv", number = 10))
+prediction_rf <- predict(modFit_rf, testing)
+confusionMatrix(prediction_rf, testing$classe)
+```
+We can see taht the accuracy of the Random Forest is 0.99.  
+
+### 3. Boosting:
+```{r}
+library(gbm)
+set.seed(123)
+modFit_boosting <- train(classe ~ ., method = "gbm", data = training, verbose = FALSE, trControl=trainControl(method="cv",number = 10))
+prediction_boosting <- predict(modFit_boosting, testing)
+confusionMatrix(prediction_boosting, testing$classe)
+```
+We can see that the accuracy of this boosting is 0.96.  
+
+
+# Make predictions
+Here we choose Random Forest as our model because it has the highest accuracy. We can see the prediction of "classe" in validate dataset in the end.
+```{r}
+prediction_validate <- predict(modFit_rf, newdata=validate)
+prediction_validate
+```
